@@ -1,0 +1,19 @@
+{
+	"id": "nodebb-plugin-embed-combo",
+	"name": "Multiple Service Embed",
+	"description": "Embed multiple services on nodebb",
+	"url": "",
+	"library": "./library.js",
+	"hooks": [
+        { "hook": "filter:parse.post", "method": "parse", "callbacked": true }	],
+	"staticDirs": {
+        "static": "./static"
+    },
+    "less": [
+        "static/style.less"
+    ],
+    "scripts": [
+		"static/lib/lazyYT.js",
+        "static/lib/main.js"
+	]
+}
