@@ -6,7 +6,9 @@
        
         embedTwitter = '<span data-url="https://twitter.com/$2/statuses/$3"></span><script type="text/javascript" src="//api.twitter.com/1/statuses/oembed.json?id=$3&callback=twitterEmbed"></script>',
 
-        embedVine = '<iframe class="vine-embed" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>';
+        embedVine = '<iframe class="vine-embed" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
+
+        embedVimeo = '<iframe class="vimeo-embed" src="//player.vimeo.com/video/$1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
 	    var	regularUrlYoutube = /<a href="(?:https?:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)(.+)">.+<\/a>/g;
         var	shortUrlYoutube = /<a href="(?:https?:\/\/)?(?:www\.)?(?:youtu\.be)\/(.+)">.+<\/a>/g;
@@ -16,6 +18,8 @@
         var regularUrlTwitter = /<a href="(http|https):\/\/twitter.com\/([^\/"\s]*)\/status\/([^\/"\s]*)(\/photo\/1|)">.+?<\/a>/g
 
         var regularUrlVine = /<a href="(?:https?:\/\/)?(?:vine\.co)\/v\/?(.+)">.+<\/a>/g;
+
+        var regularUrlVimeo = /<a href="(?:https?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)">.+<\/a>/g;
 
 
     ComboEmbed.parse = function(data, callback) {
@@ -42,6 +46,11 @@
         //Vine
         if (data.postData.content.match(regularUrlVine)) {
             data.postData.content = data.postData.content.replace(regularUrlVine, embedVine);
+        }
+
+        //Vimeo
+        if (data.postData.content.match(regularUrlVimeo)) {
+            data.postData.content = data.postData.content.replace(regularUrlVimeo, embedVimeo);
         }
 
         callback(null, data);
