@@ -2,7 +2,7 @@
 	"id": "nodebb-plugin-embed-combo",
 	"name": "Multiple Service Embed",
 	"description": "Embed multiple services on nodebb",
-	"url": "",
+	"url": "https://github.com/exo-do/nodebb-plugin-embed-combo",
 	"library": "./library.js",
 	"hooks": [
         { "hook": "filter:parse.post", "method": "parse", "callbacked": true }	],
