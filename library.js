@@ -11,15 +11,13 @@
         var	embedUrlYoutube = /<a href="(?:https?:\/\/)?(?:www\.)youtube.com\/embed\/([\w\-_]+)">.+<\/a>/;
 
         var regularUrlTwitter = /<a href="(http|https):\/\/twitter.com\/([^\/"\s]*)\/status\/([^\/"\s]*)(\/photo\/1|)">.+?<\/a>/g
-        var postContentTwitter = data && data.postData && data.postData.content;
+
 
 
     ComboEmbed.parse = function(data, callback) {
         if (!data || !data.postData || !data.postData.content) {
             return callback(null, data);
         }
-        
-        //Youtube
         if (data.postData.content.match(embedUrlYoutube)) {
             data.postData.content = data.postData.content.replace(embedUrlYoutube, embedYoutube);
         }
@@ -29,10 +27,8 @@
         if (data.postData.content.match(shortUrlYoutube)) {
             data.postData.content = data.postData.content.replace(shortUrlYoutube, embedYoutube);
         }
-
-        //Twitter
-        if (postContent && postContent.match(regularUrlTwitter)) {
-            data.postData.content = postContent.replace(regularUrlTwitter, embedTwitter);
+        if (data.postData.content.match(regularUrlTwitter)) {
+            data.postData.content = data.postData.content.replace(regularUrlTwitter, embedTwitter);
         }
         callback(null, data);
 
