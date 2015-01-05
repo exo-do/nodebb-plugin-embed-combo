@@ -35,7 +35,7 @@
     };
 
 
-    Twitter.init = {
+    ComboEmbed.init = {
         global: {
             addNavigation: function(custom_header, callback) {
                         custom_header.navigation.push({
