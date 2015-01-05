@@ -34,5 +34,20 @@
 
     };
 
+
+    Twitter.init = {
+        global: {
+            addNavigation: function(custom_header, callback) {
+                        custom_header.navigation.push({
+                        class: 'hidden',
+                        route: "",
+                        text: '<script language="javascript" src="//platform.twitter.com/widgets.js"></script>'
+                    });
+
+                callback(null, custom_header);
+            }
+        }
+    },
+
 	module.exports = ComboEmbed;
 }(module));
