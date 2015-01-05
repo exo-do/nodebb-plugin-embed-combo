@@ -1,0 +1,24 @@
+{
+  "name": "nodebb-plugin-embed-combo",
+  "version": "0.1.0",
+  "description": "Embed multiple services on nodebb",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exo-do/nodebb-plugin-embed-combo"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "embed",
+    "combo"
+  ],
+  "author": {
+    "name": "h3ku"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/exo-do/nodebb-plugin-embed-combo/issues"
+  },
+  "readmeFilename": "README.md"
+}
