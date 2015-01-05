@@ -17,8 +17,9 @@
         embedSouncloudSet = '<iframe width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
         //Spotify
         embedSpotifyTrack = '<iframe src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
-        embedSpotifyUser = '<iframe src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>';
-
+        embedSpotifyUser = '<iframe src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+        //Twitch.tv
+        embedTwitch = '<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=$1" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=$1&auto_play=false&start_volume=50" /></object>';
 
         //Lo que se busca
         //Youtube
@@ -42,6 +43,9 @@
         //Spotify
         var regularUrlSpotifyTrack = /spotify:(track|album):([a-zA-Z0-9]+)/g;
         var regularUrlSpotifyUser = /spotify:user:([a-zA-Z0-9]+):playlist:([a-z-A-Z0-9]+)/g;
+
+        //Twitch.tv
+        var regularUrlTwitch = /<a href="(?:http?:\/\/)?(?:www\.twitch\.tv)\/?(.+)">.+<\/a>/g;
 
     ComboEmbed.parse = function(data, callback) {
         if (!data || !data.postData || !data.postData.content) {
@@ -88,6 +92,11 @@
         }
         if (data.postData.content.match(regularUrlSpotifyUser)) {
             data.postData.content = data.postData.content.replace(regularUrlSpotifyUser, embedSpotifyUser);
+        }
+
+        //Twitch
+        if (data.postData.content.match(regularUrlTwitch)) {
+            data.postData.content = data.postData.content.replace(regularUrlTwitch, embedTwitch);
         }
 
         callback(null, data);
