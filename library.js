@@ -14,7 +14,11 @@
         embedVimeo = '<iframe class="vimeo-embed" src="//player.vimeo.com/video/$1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
         //SoundCloud
         embedSouncloudTrack = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/$2&amp;show_artwork=true"></iframe>',
-        embedSouncloudSet = '<iframe width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>';
+        embedSouncloudSet = '<iframe width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
+        //Spotify
+        embedSpotifyTrack = '<iframe src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+        embedSpotifyUser = '<iframe src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>';
+
 
         //Lo que se busca
         //Youtube
@@ -34,6 +38,10 @@
         //SoundCloud
         var regularUrlSounCloudTrack = /<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/([\w\-_]+)">.+<\/a>/g;
         var regularUrlSounCloudSet = /<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/sets\/([\w\-_]+)">.+<\/a>/g;
+
+        //Spotify
+        var regularUrlSpotifyTrack = /spotify:(track|album):([a-zA-Z0-9]+)/g;
+        var regularUrlSpotifyUser = /spotify:user:([a-zA-Z0-9]+):playlist:([a-z-A-Z0-9]+)/g;
 
     ComboEmbed.parse = function(data, callback) {
         if (!data || !data.postData || !data.postData.content) {
@@ -73,7 +81,15 @@
         if (data.postData.content.match(regularUrlSounCloudSet)) {
             data.postData.content = data.postData.content.replace(regularUrlSounCloudSet, embedSouncloudSet);
         }
-        
+
+        //Spotify
+        if (data.postData.content.match(regularUrlSpotifyTrack)) {
+            data.postData.content = data.postData.content.replace(regularUrlSpotifyTrack, embedSpotifyTrack);
+        }
+        if (data.postData.content.match(regularUrlSpotifyUser)) {
+            data.postData.content = data.postData.content.replace(regularUrlSpotifyUser, embedSpotifyUser);
+        }
+
         callback(null, data);
 
     };
