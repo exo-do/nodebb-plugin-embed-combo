@@ -5,7 +5,9 @@
 	"url": "https://github.com/exo-do/nodebb-plugin-embed-combo",
 	"library": "./library.js",
 	"hooks": [
-        { "hook": "filter:parse.post", "method": "parse", "callbacked": true }	],
+        { "hook": "filter:parse.post", "method": "parse", "callbacked": true },
+        { "hook": "filter:parse.raw", "method": "preview", "callbacked": true }	
+	],
 	"staticDirs": {
         "static": "./static"
     },
@@ -13,7 +15,8 @@
         "static/style.less"
     ],
     "scripts": [
-		"static/lib/lazyYT.js",
+		"static/vendor/lazyYT.js",
+		"static/vendor/twitter.js",
         "static/lib/main.js"
 	]
 }
