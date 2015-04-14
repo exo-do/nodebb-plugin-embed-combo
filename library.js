@@ -88,14 +88,14 @@
 	
 	embeds.push({
 		id: 'Webm',
-		code: '<video preload="metadata" controls="" src="$1"></video>',
+		code: '<video width="640" height="360" preload="metadata" controls="" src="$1"></video>',
 		regexps: [/<a href="(.+?\.webm)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
 	
 	embeds.push({
 		id: 'Gfycat',
-		code: '<video preload="metadata" controls="" src="http://zippy.gfycat.com/$1.webm"></video>',
+		code: '<video width="640" height="360" preload="metadata" controls="" src="http://zippy.gfycat.com/$1.webm"></video>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
