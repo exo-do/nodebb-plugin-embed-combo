@@ -14,7 +14,7 @@
 	
 	embeds.push({
 		id: 'YouTube',
-		code: '<div class="js-lazyYT" data-youtube-id="$1" data-width="640" data-height="360"><iframe class="lazytube" src="//www.youtube.com/embed/$1"></iframe></div>',
+		code: '<div class="js-lazyYT embedElement" data-youtube-id="$1" data-width="640" data-height="360"><iframe src="//www.youtube.com/embed/$1"></iframe></div>',
 		regexps: [
 			/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)(.+)">.*?<\/a>/g,
 			/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtu\.be)\/(.+)">.*?<\/a>/g,
@@ -25,77 +25,77 @@
 	
 	embeds.push({
 		id: 'Twitter',
-		code: '<span data-url="https://twitter.com/$1/statuses/$2"></span><script type="text/javascript" src="//api.twitter.com/1/statuses/oembed.json?id=$2&callback=twitterEmbed"></script>',
+		code: '<span class="embedElement" data-url="https://twitter.com/$1/statuses/$2"></span><script type="text/javascript" src="//api.twitter.com/1/statuses/oembed.json?id=$2&callback=twitterEmbed"></script>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?twitter.com\/([^\/"\s]*)\/status\/([^\/"\s]*)(\/photo\/1|)">.*?<\/a>/g],
 		icon: 'fa-twitter'
 	});
 	
 	embeds.push({
 		id: 'Vine',
-		code: '<iframe class="vine-embed" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
+		code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vine\.co)\/v\/?(.+)">.*?<\/a>/g],
 		icon: 'fa-vine'
 	});
 	
 	embeds.push({
 		id: 'Vimeo',
-		code: '<iframe class="vimeo-embed" src="//player.vimeo.com/video/$1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+		code: '<iframe class="embedElement" class="vimeo-embed" src="//player.vimeo.com/video/$1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)">.*?<\/a>/g],
 		icon: 'fa-vimeo-square'
 	});
 	
 	embeds.push({
 		id: 'Soundcloud Track',
-		code: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/$2&amp;show_artwork=true"></iframe>',
+		code: '<iframe class="vimeo-embed embedElement" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/$2&amp;show_artwork=true"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/([\w\-_]+)">.*?<\/a>/g],
 		icon: 'fa-soundcloud'
 	});
 	
 	embeds.push({
 		id: 'Soundcloud Set',
-		code: '<iframe width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
+		code: '<iframe class="embedElement" width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/sets\/([\w\-_]+)">.*?<\/a>/g],
 		icon: 'fa-soundcloud'
 	});
 	
 	embeds.push({
 		id: 'Spotify Track',
-		code: '<iframe src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+		code: '<iframe class="embedElement" src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
 		regexps: [/spotify:(track|album):([a-zA-Z0-9]+)/g],
 		icon: 'fa-spotify'
 	});
 	
 	embeds.push({
 		id: 'Spotify User',
-		code: '<iframe src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+		code: '<iframe class="embedElement" src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
 		regexps: [/spotify:user:([a-zA-Z0-9]+):playlist:([a-z-A-Z0-9]+)/g],
 		icon: 'fa-spotify'
 	});
 	
 	embeds.push({
 		id: 'Twitch',
-		code: '<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=$1" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=$1&auto_play=false&start_volume=50" /></object>',
+		code: '<object class="embedElement" type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=$1" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=$1&auto_play=false&start_volume=50" /></object>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:twitch\.tv)\/?(.+)">.*?<\/a>/g],
 		icon: 'fa-twitch'
 	});
 	
 	embeds.push({
 		id: 'Vocaroo',
-		code: '<object width="148" height="44"><param name="movie" value="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0"></param><param name="wmode" value="transparent"></param><embed src="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0" width="148" height="44" wmode="transparent" type="application/x-shockwave-flash"></embed></object>',
+		code: '<object class="embedElement" width="148" height="44"><param name="movie" value="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0"></param><param name="wmode" value="transparent"></param><embed src="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0" width="148" height="44" wmode="transparent" type="application/x-shockwave-flash"></embed></object>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)(.+)">.*?<\/a>/g],
 		icon: 'fa-volume-off'
 	});
 	
 	embeds.push({
 		id: 'Webm',
-		code: '<video width="640" height="360" preload="metadata" controls="" src="$1"></video>',
+		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls="" src="$1"></video>',
 		regexps: [/<a href="(.+?\.webm)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
 	
 	embeds.push({
 		id: 'Gfycat',
-		code: '<video width="640" height="360" preload="metadata" controls="" src="http://zippy.gfycat.com/$1.webm"></video>',
+		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls="" src="http://zippy.gfycat.com/$1.webm"></video>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
@@ -108,10 +108,12 @@
         if (!data || !data.postData || !data.postData.content) {
             return callback(null, data);
         }
+
+        var scriptToResizeOnMobile = "<script> function resizeEmbed(){ if(window.innerWidth < 650){ $('.embedElement').width('100%'); } } resizeEmbed(); window.addEventListener('resize', resizeEmbed); </script>"
 		
 		embeds.forEach(function (embed) {
 			embed.regexps.forEach(function (regex) {
-				data.postData.content = data.postData.content.replace(regex, embed.code);
+				data.postData.content = data.postData.content.replace(regex, embed.code+scriptToResizeOnMobile);
 			});
 		});
         
