@@ -95,7 +95,7 @@
 	
 	embeds.push({
 		id: 'Gfycat',
-		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls="" src="http://zippy.gfycat.com/$1.webm"></video>',
+		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls=""><source src="http://zippy.gfycat.com/$1.webm"> <source src="http://zippy.gfycat.com/$1.mp4"> </video>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
