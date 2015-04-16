@@ -95,7 +95,8 @@
 	
 	embeds.push({
 		id: 'Gfycat',
-		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls=""><source src="http://zippy.gfycat.com/$1.webm"> <source src="http://zippy.gfycat.com/$1.mp4"> </video>',
+		//code: '<video class="embedElement" width="640" height="360" preload="metadata" controls=""><source src="http://zippy.gfycat.com/$1.webm"> <source src="http://zippy.gfycat.com/$1.mp4"> <source src="http://fat.gfycat.com/$1.webm"> <source src="http://fat.gfycat.com/$1.mp4"> </video>',
+		code:'<iframe class="embedElement" width="640" height="360" src="http://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)">.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
