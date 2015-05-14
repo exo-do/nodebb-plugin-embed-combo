@@ -16,7 +16,6 @@
     ],
     "scripts": [
 		"static/vendor/lazyYT.js",
-		"static/vendor/twitter.js",
         "static/lib/main.js"
 	]
 }

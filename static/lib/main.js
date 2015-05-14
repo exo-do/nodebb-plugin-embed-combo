@@ -10,7 +10,7 @@
 		$('.js-lazyYT').delay(500).lazyYT();
 	});
 
-	/* Carga de Tweets */
+	/* Carga de Tweets
 	window.twitterEmbed = function(data) {
 
 		$('[data-url="' + data["url"] + '"]').each(function () {
@@ -21,5 +21,6 @@
 		
 		twttr.widgets.load();
 	};
+	*/
 	
 })();
