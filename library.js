@@ -23,13 +23,15 @@
 		icon: 'fa-youtube-play'
 	});
 	
+	/*
 	embeds.push({
-		id: 'Twitter',
+		id: 'Twittero',
 		code: '<span class="embedElement" data-url="https://twitter.com/$1/statuses/$2"></span><script type="text/javascript" src="//api.twitter.com/1/statuses/oembed.json?id=$2&callback=twitterEmbed"></script>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?twitter.com\/([^\/"\s]*)\/status\/([^\/"\s]*)(\/photo\/1|)">.*?<\/a>/g],
 		icon: 'fa-twitter'
 	});
-	
+	*/
+
 	embeds.push({
 		id: 'Vine',
 		code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
