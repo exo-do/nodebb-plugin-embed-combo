@@ -14,7 +14,7 @@
 	
 	embeds.push({
 		id: 'YouTube',
-		code: '<div class="js-lazyYT embedElement" data-youtube-id="$1" data-width="640" data-height="360"><iframe src="//www.youtube.com/embed/$1"></iframe></div>',
+		code: '<div class="js-lazyYT embedElement" data-youtube-id="$1" data-height="360"><iframe class="lazytube" src="//www.youtube.com/embed/$1"></iframe></div>',
 		regexps: [
 			/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)(.+)">.*?<\/a>/g,
 			/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtu\.be)\/(.+)">.*?<\/a>/g,
