@@ -112,11 +112,10 @@
             return callback(null, data);
         }
 
-        var scriptToResizeOnMobile = "<script> function resizeEmbed(){ if(window.innerWidth < 650){ $('.embedElement').width('100%'); } } resizeEmbed(); window.addEventListener('resize', resizeEmbed); </script>"
-		
+        
 		embeds.forEach(function (embed) {
 			embed.regexps.forEach(function (regex) {
-				data.postData.content = data.postData.content.replace(regex, embed.code+scriptToResizeOnMobile);
+				data.postData.content = data.postData.content.replace(regex, embed.code);
 			});
 		});
         

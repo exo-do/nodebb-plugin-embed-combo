@@ -22,5 +22,16 @@
 		twttr.widgets.load();
 	};
 	*/
+
+	/* Auto ajustar a tamano de pantalla */
+	function resizeEmbed()
+	{ 
+		if(window.innerWidth < 650)
+		{
+			$('.embedElement').width('100%');
+		}
+	}
+	resizeEmbed();
+	window.addEventListener('resize', resizeEmbed);
 	
 })();
