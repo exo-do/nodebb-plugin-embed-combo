@@ -34,9 +34,7 @@
 
 	embeds.push({
 		id: 'Vine',
-		/*
-		code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
-		*/
+		/* code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',*/
 		code: '<iframe src="https://vine.co/v/$1/embed/simple" width="480" height="480" frameborder="0"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vine\.co)\/v\/?([^"]+)".*>.*?<\/a>/g],
 		icon: 'fa-vine'
