@@ -88,8 +88,6 @@
 		code: '<div class="playerBoxHTML5 embedElement" id="idPlayerBox"><a href="http://vocaroo.com/i/$1" title="Vocaroo"><img src="http://vocaroo.com/mascot-robot.png" width="50 "height="50"></img></a><audio controls=""><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3" type="audio/mpeg"><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=command=download_webm" type="audio/webm"><p>Your browser does not support in page playback. Please <a href="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3">download as MP3</a>.</p></audio></div>',
 		//regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)(.+)".*>.*?<\/a>/g],
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)([^"]*)".*>.*?<\/a>/g],
-
-
 		icon: 'fa-volume-off'
 	});
 
@@ -105,7 +103,7 @@
 		//code: '<video class="embedElement" width="640" height="360" preload="metadata" controls=""><source src="http://zippy.gfycat.com/$1.webm"> <source src="http://zippy.gfycat.com/$1.mp4"> <source src="http://fat.gfycat.com/$1.webm"> <source src="http://fat.gfycat.com/$1.mp4"> </video>',
 		code:'<iframe class="embedElement" width="640" height="360" src="http://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)".*>.*?<\/a>/g],
-		icon: 'fa-video-camera'
+		icon: 'fa-github-alt'
 	});
 
 	// Gifv
@@ -113,15 +111,15 @@
 		id: 'Gifv',
 		code: '<video class="embedElement" width="640" height="360" autoplay loop muted><source type="video/webm" src="$1.webm"><source type="video/mp4" src="$1.mp4"></video>',
 		regexps: [/<a href="(.+?)\.gifv".*>.*?<\/a>/g],
-		icon: 'fa-video-camera'
+		icon: 'fa-video-qq'
 	});
-	
+
 	//liveleaks
 	embeds.push({
         	id: 'Liveleak',
-        	code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?f=$1" frameborder="0" allowfullscreen></iframe>',
-        	regexps: [/<a href="https?:\/\/(liveleak\.com\/view\?.*)|<a href=\"https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)<\/a>/g],
-        	icon: 'fa-vine'
+        	code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
+        	regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)">https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)<\/a>/g],
+        	icon: 'fa-video-camera'
     	});
 
 	/**
