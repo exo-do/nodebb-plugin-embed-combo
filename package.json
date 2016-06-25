@@ -14,11 +14,20 @@
     "combo"
   ],
   "author": {
-    "name": "h3ku"
+    "name": "h3ku & exodo"
   },
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/exo-do/nodebb-plugin-embed-combo/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility":   "<=1.0.0"
+  },
+  "scripts": {
+    "2npm": "publish"
+  },
+  "devDependencies": {
+    "publish": "0.5.0"
+  }
 }
