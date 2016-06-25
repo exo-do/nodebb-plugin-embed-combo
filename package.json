@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-embed-combo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Embed multiple services on nodebb",
   "main": "library.js",
   "repository": {
@@ -11,7 +11,8 @@
     "nodebb",
     "plugin",
     "embed",
-    "combo"
+    "combo",
+    "iframe"
   ],
   "author": {
     "name": "h3ku & exodo"
