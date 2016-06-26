@@ -118,9 +118,17 @@
 	embeds.push({
         	id: 'Liveleak',
         	code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
-        	regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)<\/a>/g],
+        	regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
         	icon: 'fa-video-camera'
     	});
+
+	//pornhub
+	embeds.push({
+	      	id: 'Pornhub',
+	      	code: '<iframe src="http://www.pornhub.com/embed/$1" frameborder="0" width="608" height="338" scrolling="no"></iframe>',
+	      	regexps: [/<a href="https?:\/\/.*\.pornhub\.com\/view_video\.php\?.*viewkey\=(\w+)".*>.*<\/a>/g],
+	      	icon: 'fa-times-circle-o'
+	  	});
 
 	/**
 	 * Buscamos e insertamos todos los servicios que hemos definido
