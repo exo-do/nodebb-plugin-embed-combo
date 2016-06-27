@@ -129,6 +129,13 @@
 	      	regexps: [/<a href="https?:\/\/.*\.pornhub\.com\/view_video\.php\?.*viewkey\=(\w+)".*>.*<\/a>/g],
 	      	icon: 'fa-times-circle-o'
 	  	});
+	//xvideos
+	embeds.push({
+	      	id: 'XVideos',
+	      	code: '<iframe src="http://flashservice.xvideos.com/embedframe/$1" frameborder=0 width=510 height=400 scrolling=no></iframe>',
+	      	regexps: [/<a href="https?:\/\/www.xvideos.com\/video(\w+)\/.*">.*<\/a>/g],
+	      	icon: 'fa-times-circle-o'
+	  	});
 
 	/**
 	 * Buscamos e insertamos todos los servicios que hemos definido
