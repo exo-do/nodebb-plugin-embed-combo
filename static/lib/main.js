@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 
-	/* Carga de vídeos de Youtube */
+	/* Carga de vídeos de Youtube
 	$(window).on('action:widgets.loaded', function () {
 		$('.js-lazyYT').lazyYT();
 	});
@@ -18,14 +18,14 @@
 			$(this).html(data["html"]);
 			$(this).css('visibility', 'hidden');
 		});
-		
+
 		twttr.widgets.load();
 	};
 	*/
 
 	/* Auto ajustar a tamano de pantalla */
-	function resizeEmbed()
-	{ 
+/*	function resizeEmbed()
+	{
 		if(window.innerWidth < 650)
 		{
 			$('.embedElement').width('100%');
@@ -33,5 +33,5 @@
 	}
 	resizeEmbed();
 	window.addEventListener('resize', resizeEmbed);
-	
+*/
 })();

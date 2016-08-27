@@ -6,7 +6,7 @@
 	"library": "./library.js",
 	"hooks": [
         { "hook": "filter:parse.post", "method": "parse", "callbacked": true },
-        { "hook": "filter:parse.raw", "method": "preview", "callbacked": true }	
+        { "hook": "filter:parse.raw", "method": "preview", "callbacked": true }
 	],
 	"staticDirs": {
         "static": "./static"
@@ -15,7 +15,6 @@
         "static/style.less"
     ],
     "scripts": [
-		"static/vendor/lazyYT.js",
-        "static/lib/main.js"
+    "static/lib/main.js"
 	]
 }

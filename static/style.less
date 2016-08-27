@@ -36,15 +36,15 @@
                 width: 100%;
 		}
 
-@media only screen 
+@media only screen
 and (max-width : 950px) {
-	
+
         iframe.lazytube {
             border: 0 none;
             height: 240px;
             width: 100%;
         }
-        
+
 }
 
 
@@ -93,13 +93,13 @@ and (orientation : landscape) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-	
+
 	iframe.youtube-plugin {
 	border: 0;
 	height: 360px;
 	width: 100%;
 	}
-	
+
 }
 
 
@@ -111,6 +111,18 @@ iframe.vine-embed {
 }
 iframe.soundcloud-embed {
   border: 0;
+}
+
+
+.embed-container {position: relative; padding-bottom: 50%; height: 0; overflow: hidden;}
+.embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; }
+
+.topic .posts .content iframe, .topic .posts .content .img-responsive {
+  //height: auto;
+}
+
+.topic .content video {
+    max-width: 100%;
 }
 
 

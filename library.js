@@ -12,6 +12,7 @@
 	 * });
 	 */
 
+	 /*
 	embeds.push({
 		id: 'YouTube',
 		code: '<div class="js-lazyYT embedElement" data-youtube-id="$1" data-height="360"><iframe class="lazytube" src="//www.youtube.com/embed/$1"></iframe></div>',
@@ -22,7 +23,7 @@
 		],
 		icon: 'fa-youtube-play'
 	});
-
+	*/
 	/*
 	embeds.push({
 		id: 'Twittero',
@@ -35,7 +36,7 @@
 	embeds.push({
 		id: 'Vine',
 		/* code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',*/
-		code: '<iframe src="https://vine.co/v/$1/embed/simple" width="480" height="480" frameborder="0"></iframe>',
+		code: '<div class="embed-container"><iframe width="100%" src="https://vine.co/v/$1/embed/simple" width="480" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script></div>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vine\.co)\/v\/?([^"]+)".*>.*?<\/a>/g],
 		icon: 'fa-vine'
 	});
@@ -116,19 +117,19 @@
 
 	//liveleaks
 	embeds.push({
-        	id: 'Liveleak',
-        	code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
-        	regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
-        	icon: 'fa-video-camera'
-    	});
+    id: 'Liveleak',
+    code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
+    regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
+  	icon: 'fa-video-camera'
+  });
 
 	//pornhub
 	embeds.push({
-	      	id: 'Pornhub',
-	      	code: '<iframe src="http://www.pornhub.com/embed/$1" frameborder="0" width="608" height="338" scrolling="no"></iframe>',
-	      	regexps: [/<a href="https?:\/\/.*\.pornhub\.com\/view_video\.php\?.*viewkey\=(\w+)".*>.*<\/a>/g],
-	      	icon: 'fa-times-circle-o'
-	  	});
+		id: 'Pornhub',
+	  code: '<iframe src="http://www.pornhub.com/embed/$1" frameborder="0" width="608" height="338" scrolling="no"></iframe>',
+	  regexps: [/<a href="https?:\/\/.*\.pornhub\.com\/view_video\.php\?.*viewkey\=(\w+)".*>.*<\/a>/g],
+	  icon: 'fa-times-circle-o'
+	});
 
 	/**
 	 * Buscamos e insertamos todos los servicios que hemos definido
