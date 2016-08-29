@@ -80,7 +80,7 @@
 
 	embeds.push({  //ok but some console errors
 		id: 'Soundcloud Set',
-		code: '<iframe class="soundcloud" width="100%" height="410" scrolling="no" frameborder="no" src="http//w.soundcloud.com/player/?url=://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
+		code: '<iframe class="soundcloud" width="100%" height="410" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/sets\/([\w\-_]+)".*>.*?<\/a>/g],
 		icon: 'fa-soundcloud'
 	});
@@ -103,7 +103,7 @@
 	embeds.push({ //ok
 		id: 'Vocaroo',
 		//code: '<object class="embedElement" width="148" height="44"><param name="movie" value="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0"></param><param name="wmode" value="transparent"></param><embed src="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0" width="148" height="44" wmode="transparent" type="application/x-shockwave-flash"></embed></object>',
-		code: '<div class="playerBoxHTML5" id="idPlayerBox"><a href="http//vocaroo.com/i/$1" title="Vocaroo"><img src="http//vocaroo.com/mascot-robot.png" width="50 "height="50"></img></a><audio controls=""><source src="//vocaroo.com/media_command.php?media=$1&amp;command=download_mp3" type="audio/mpeg"><source src="http//vocaroo.com/media_command.php?media=$1&amp;command=command=download_webm" type="audio/webm"><p>Your browser does not support in page playback. Please <a href="http//vocaroo.com/media_command.php?media=$1&amp;command=download_mp3">download as MP3</a>.</p></audio></div>',
+		code: '<div class="playerBoxHTML5" id="idPlayerBox"><a href="http://vocaroo.com/i/$1" title="Vocaroo"><img src="http://vocaroo.com/mascot-robot.png" width="50 "height="50"></img></a><audio controls=""><source src="//vocaroo.com/media_command.php?media=$1&amp;command=download_mp3" type="audio/mpeg"><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=command=download_webm" type="audio/webm"><p>Your browser does not support in page playback. Please <a href="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3">download as MP3</a>.</p></audio></div>',
 		//regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)(.+)".*>.*?<\/a>/g],
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)([^"]*)".*>.*?<\/a>/g],
 		icon: 'fa-volume-off'
