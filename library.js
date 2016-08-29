@@ -33,86 +33,102 @@
 	});
 	*/
 
-	embeds.push({
+
+	embeds.push({  //ok
+		id: 'Twitter',
+		code: '<div class="twitter"><blockquote class="twitter-tweet" lang="en"><a href="https://twitter.com/$1/status/$2"></a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>',
+		regexps: [/<a href="(?:https?:\/\/)?(?:twitter\.com)\/([^\/"\s]*)\/statuse?s?\/([^\/"\s]*)(\/photo\/\d|)".*?>.+?<\/a>/g],
+		icon: 'fa-twitter'
+	});
+
+	embeds.push({  //ok
+		id: 'Instagram',
+		code: '<div class="embed-container instagram"><iframe src="//instagram.com/p/$1/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>',
+		regexps: [/<a href="(?:https?:)?\/\/(?:www.)?(?:instagram\.com)\/p\/([^\/"]+)\/"[^<]+(?:<\/a>)/g],
+		icon: 'fa-instagram'
+	});
+
+	embeds.push({ //ok
 		id: 'Vine',
 		/* code: '<iframe class="vine-embed embedElement" src="https://vine.co/v/$1/embed/postcard?related=0" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',*/
-		code: '<div class="embed-container"><iframe width="100%" src="https://vine.co/v/$1/embed/simple" width="480" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script></div>',
+		code: '<div class="embed-container vine"><iframe src="//vine.co/v/$1/embed/simple" frameborder="0" scrolling="no" allowtransparency="true"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script></div>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vine\.co)\/v\/?([^"]+)".*>.*?<\/a>/g],
 		icon: 'fa-vine'
 	});
 
-	embeds.push({
+	embeds.push({  //ok
 		id: 'Vimeo',
-		code: '<iframe class="embedElement" class="vimeo-embed" src="//player.vimeo.com/video/$1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+		code: '<div class="vimeo"><iframe src="//player.vimeo.com/video/$1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)".*>.*?<\/a>/g],
-		icon: 'fa-vimeo-square'
+		icon: 'fa-vimeo'
 	});
 
-	embeds.push({
+
+	embeds.push({  //ok but not working on mobile
+			id: 'Twitch',
+			code: '<div class="twitch"><iframe src="https://player.twitch.tv/?channel=$1" frameborder="0" scrolling="no"></iframe><a href="https://www.twitch.tv/$1?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; font-weight:normal; font-size:10px;text-decoration:underline;">Twitch Video</a></div>',
+			regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:twitch\.tv)\/?(.+)".*>.*?<\/a>/g],
+			icon: 'fa-twitch'
+	});
+
+	embeds.push({  //ok
 		id: 'Soundcloud Track',
-		code: '<iframe class="vimeo-embed embedElement" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/$2&amp;show_artwork=true"></iframe>',
+		code: '<iframe class="vimeo-embed" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/$2&amp;show_artwork=true"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/([\w\-_]+)".*>.*?<\/a>/g],
 		icon: 'fa-soundcloud'
 	});
 
-	embeds.push({
+	embeds.push({  //ok but some console errors
 		id: 'Soundcloud Set',
-		code: '<iframe class="embedElement" width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
+		code: '<iframe class="soundcloud" width="100%" height="410" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/$1/sets/$2&amp;show_artwork=true"></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:soundcloud\.com)\/?([\w\-_]+)\/sets\/([\w\-_]+)".*>.*?<\/a>/g],
 		icon: 'fa-soundcloud'
 	});
 
-	embeds.push({
-		id: 'Spotify Track',
-		code: '<iframe class="embedElement" src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+	embeds.push({ //ok
+		id: 'Spotify Track-Album',
+		code: '<iframe class="spotify" src="https://embed.spotify.com/?uri=spotify:$1:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
 		regexps: [/spotify:(track|album):([a-zA-Z0-9]+)/g],
 		icon: 'fa-spotify'
 	});
 
-	embeds.push({
-		id: 'Spotify User',
-		code: '<iframe class="embedElement" src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
+	embeds.push({ //ok
+		id: 'Spotify User Playlist',
+		code: '<iframe class="spotify" src="https://embed.spotify.com/?uri=spotify:user:$1:playlist:$2" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>',
 		regexps: [/spotify:user:([a-zA-Z0-9]+):playlist:([a-z-A-Z0-9]+)/g],
 		icon: 'fa-spotify'
 	});
 
-	embeds.push({
-		id: 'Twitch',
-		code: '<object class="embedElement" type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=$1" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=$1&auto_play=false&start_volume=50" /></object>',
-		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:twitch\.tv)\/?(.+)".*>.*?<\/a>/g],
-		icon: 'fa-twitch'
-	});
 
-	embeds.push({
+	embeds.push({ //ok
 		id: 'Vocaroo',
 		//code: '<object class="embedElement" width="148" height="44"><param name="movie" value="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0"></param><param name="wmode" value="transparent"></param><embed src="http://vocaroo.com/player.swf?playMediaID=$1&autoplay=0" width="148" height="44" wmode="transparent" type="application/x-shockwave-flash"></embed></object>',
-		code: '<div class="playerBoxHTML5 embedElement" id="idPlayerBox"><a href="http://vocaroo.com/i/$1" title="Vocaroo"><img src="http://vocaroo.com/mascot-robot.png" width="50 "height="50"></img></a><audio controls=""><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3" type="audio/mpeg"><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=command=download_webm" type="audio/webm"><p>Your browser does not support in page playback. Please <a href="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3">download as MP3</a>.</p></audio></div>',
+		code: '<div class="playerBoxHTML5" id="idPlayerBox"><a href="http://vocaroo.com/i/$1" title="Vocaroo"><img src="http://vocaroo.com/mascot-robot.png" width="50 "height="50"></img></a><audio controls=""><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3" type="audio/mpeg"><source src="http://vocaroo.com/media_command.php?media=$1&amp;command=command=download_webm" type="audio/webm"><p>Your browser does not support in page playback. Please <a href="http://vocaroo.com/media_command.php?media=$1&amp;command=download_mp3">download as MP3</a>.</p></audio></div>',
 		//regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)(.+)".*>.*?<\/a>/g],
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:vocaroo\.com)\/(?:i\/)([^"]*)".*>.*?<\/a>/g],
 		icon: 'fa-volume-off'
 	});
 
-	embeds.push({
+	embeds.push({ //ok
 		id: 'Webm',
-		code: '<video class="embedElement" width="640" height="360" preload="metadata" controls="" src="$1"></video>',
+		code: '<video class="webm" width="640" height="360" preload="metadata" controls="" src="$1"></video>',
 		regexps: [/<a href="(.+?\.webm)".*>.*?<\/a>/g],
 		icon: 'fa-video-camera'
 	});
 
-	embeds.push({
+	embeds.push({ //ok
 		id: 'Gfycat',
-		//code: '<video class="embedElement" width="640" height="360" preload="metadata" controls=""><source src="http://zippy.gfycat.com/$1.webm"> <source src="http://zippy.gfycat.com/$1.mp4"> <source src="http://fat.gfycat.com/$1.webm"> <source src="http://fat.gfycat.com/$1.mp4"> </video>',
-		code:'<iframe class="embedElement" width="640" height="360" src="http://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
+		code:'<iframe class="gfycat" width="640" height="360" src="http://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)".*>.*?<\/a>/g],
 		icon: 'fa-github-alt'
 	});
 
 	// Gifv
-	embeds.push({
+	embeds.push({ //ok
 		id: 'Gifv',
-		code: '<video class="embedElement" width="640" height="360" autoplay loop muted><source type="video/webm" src="$1.webm"><source type="video/mp4" src="$1.mp4"></video>',
+		code: '<video class="gifv" width="640" height="360" autoplay loop muted><source type="video/webm" src="$1.webm"><source type="video/mp4" src="$1.mp4"></video>',
 		regexps: [/<a href="(.+?)\.gifv".*>.*?<\/a>/g],
-		icon: 'fa-video-qq'
+		icon: 'fa-pied-piper-alt'
 	});
 
 	//liveleaks
@@ -120,7 +136,7 @@
     id: 'Liveleak',
     code: '<iframe width="640" height="360" src="http://www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
     regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
-  	icon: 'fa-video-camera'
+  	icon: 'fa-exclamation-triangle'
   });
 
 	//pornhub
