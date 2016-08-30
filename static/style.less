@@ -61,6 +61,23 @@ iframe {
   }
 }
 
+.dumpert {
+
+  max-width: 100%;
+  iframe {
+    width: 640px;
+    height: 360px;
+  }
+
+  @media only screen and (max-width : 640px) {
+      iframe {
+        width: inherit;
+        height: inherit;
+      }
+  }
+}
+
+
 .twitch {
 
   iframe {

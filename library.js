@@ -63,6 +63,12 @@
 		icon: 'fa-vimeo'
 	});
 
+	embeds.push({  //ok
+		id: 'Dumpert',
+		code: '<div class="dumpert"><iframe src="//www.dumpert.nl/embed/$1/$2/" frameborder="0" allowfullscreen></iframe></div>',
+		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:dumpert\.nl\/mediabase)\/([a-zA-Z0-9_-]{4,11})\/([a-zA-Z0-9_-]{4,11}).*">.*?<\/a>/g],
+		icon: 'fa-gg-circle'
+	});
 
 	embeds.push({  //ok
 			id: 'Twitch',
