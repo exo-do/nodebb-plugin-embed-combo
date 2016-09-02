@@ -124,7 +124,7 @@
 
 	embeds.push({ //ok
 		id: 'Gfycat',
-		code:'<iframe class="gfycat" width="640" height="360" src="http://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
+		code:'<iframe class="gfycat" width="640" height="360" src="https://gfycat.com/ifr/$1" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>',
 		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?(?:gfycat\.com)\/?([\w\-_]+?)".*>.*?<\/a>/g],
 		icon: 'fa-github-alt'
 	});
