@@ -44,7 +44,8 @@
 	embeds.push({  //ok
 		id: 'Instagram',
 		code: '<div class="embed-container instagram"><iframe src="//instagram.com/p/$1/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>',
-		regexps: [/<a href="(?:https?:)?\/\/(?:www.)?(?:instagram\.com)\/p\/([^\/"]+)\/"[^<]+(?:<\/a>)/g],
+		//regexps: [/<a href="(?:https?:)?\/\/(?:www.)?(?:instagram\.com)\/p\/([^\/"]+)\/"[^<]+(?:<\/a>)/g],
+		regexps: [/<a href="(?:https?:)?\/\/(?:www.)?(?:instagram\.com)\/p\/([^\/"]+)\/[^"]*"[^<]+(?:<\/a>)/g],
 		icon: 'fa-instagram'
 	});
 
