@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-embed-combo",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Embed multiple services on nodebb",
   "main": "library.js",
   "repository": {
