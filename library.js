@@ -140,8 +140,8 @@
 	//liveleaks
 	embeds.push({
     id: 'Liveleak',
-    code: '<iframe width="640" height="360" src="//www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
-    regexps: [/<a href="https?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
+    code: '<iframe width="640" height="360" src="http//www.liveleak.com/ll_embed?i=$1" frameborder="0" allowfullscreen></iframe>',
+    regexps: [/<a href="http?:\/\/www\.liveleak\.com\/view\?.*i\=(\w+)".*>.*<\/a>/g],
   	icon: 'fa-exclamation-triangle'
   });
 
