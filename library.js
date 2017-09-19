@@ -12,7 +12,6 @@
 	 * });
 	 */
 
-	 /*
 	embeds.push({
 		id: 'YouTube',
 		code: '<div class="js-lazyYT embedElement" data-youtube-id="$1" data-height="360"><iframe class="lazytube" src="//www.youtube.com/embed/$1"></iframe></div>',
@@ -23,15 +22,6 @@
 		],
 		icon: 'fa-youtube-play'
 	});
-	*/
-	/*
-	embeds.push({
-		id: 'Twittero',
-		code: '<span class="embedElement" data-url="https://twitter.com/$1/statuses/$2"></span><script type="text/javascript" src="//api.twitter.com/1/statuses/oembed.json?id=$2&callback=twitterEmbed"></script>',
-		regexps: [/<a href="(?:https?:\/\/)?(?:www\.)?twitter.com\/([^\/"\s]*)\/status\/([^\/"\s]*)(\/photo\/1|)">.*?<\/a>/g],
-		icon: 'fa-twitter'
-	});
-	*/
 
 
 	embeds.push({  //ok
